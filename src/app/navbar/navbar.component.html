@@ -1,0 +1,12 @@
+<nav>
+  <h2>Navigation Bar</h2>
+  <ul class="nav-list">
+    <li class="nav-link"> <a routerLink="/todolist">Home</a></li>
+    <li class="nav-link">Profile</li>
+    <li *ngIf="_isLoggedIn" class="nav-btn"><button (click)="signOut()">Sign Out</button></li>
+    <li *ngIf="!_isLoggedIn" class="nav-btn"><a routerLink="/register"><button>Sign In</button></a></li>
+    <li *ngIf="!_isLoggedIn" class="nav-btn"><a routerLink="/register"><button>Register</button></a></li>
+  </ul>
+  <p *ngIf="_isLoggedIn"><b>Currently signed in as: {{currentUserName}}</b></p>
+  <p *ngIf="!_isLoggedIn"><b>Not currently signed in</b></p>
+</nav>

@@ -1,0 +1,6 @@
+
+<ul>
+  <li *ngFor="let post of $posts | async">
+     {{ post.post_body | json }}
+  </li>
+</ul>

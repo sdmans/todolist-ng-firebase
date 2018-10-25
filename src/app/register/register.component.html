@@ -1,0 +1,20 @@
+
+<form *ngIf="!_isLoggedIn" #signForm class="sign-in-form" (submit)="signIn(signForm, username, pw)">
+<label for="email">Email Address</label>
+<input #username type="text" name="email">
+<label for="password">Password</label>
+<input #pw type="text" name="password">
+<button>Sign in!</button>
+</form>
+<button *ngIf="_isLoggedIn" (click)="signOut()">Sign Out</button>
+
+<h3>Don't have an account? Create one here!</h3>
+<form class="register-form" #form (submit)="registerUser(email, password, $event)">
+<p><b>Account Registration Form</b></p>
+<label for="email">Email Address</label>
+<input #email type="text" name="email">
+<label for="password">Password</label>
+<input #password type="text" name="password">
+<button>Submit</button>
+</form>
+

@@ -1,0 +1,24 @@
+<div *ngIf="_isLoggedIn">
+  <form class="control-group">
+    <div class="form-group">
+      <label for="comment"></label>
+      <input name="comment" type="text" (change)="addComment($event)">
+    </div>
+    <button>Submit</button>
+  </form>
+  <!-- Code commented out below will retreive all comments -->
+  <!-- <div *ngFor="let comment of comments | async">
+      <p>{{comment.comment}}<br>Posted by: {{comment.name}}</p>
+      <button (click)="delete(comment.id)">Delete</button>
+  </div> -->
+  
+  
+    <h2>{{currentUser.name}}'s To Do List</h2>
+    <div *ngFor="let comment of comments | async">
+      <div *ngIf="comment.userId === currentUser.id">
+        <p>{{comment.comment}}<br>Posted by: {{comment.name}}</p>
+        <button (click)="delete(comment.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+  <p *ngIf="!_isLoggedIn"><b>Sign in to view your To Do List!</b></p>

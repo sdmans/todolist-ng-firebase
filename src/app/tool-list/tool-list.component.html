@@ -1,0 +1,3 @@
+<ul>
+  <li *ngFor="let tool of toolList"><b>{{ tool.name }}</b>, Use Status: <span [style.color]="tool.used ? 'green': 'red'">{{tool.used}} </span></li>
+</ul>

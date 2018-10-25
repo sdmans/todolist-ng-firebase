@@ -1,0 +1,30 @@
+nav {
+    /* margin: 0 auto; */
+    text-align: center;
+}
+
+ul.nav-list {
+  width: 1000px;
+  margin: 0 auto;
+  list-style-type: none;
+}
+
+.nav-link {
+    /* display: block;
+    float: left; */
+    display: inline-block;
+    width: 80px;
+    height: 20px;
+    padding: 20px;
+    background: lemonchiffon;
+}
+
+.nav-btn {
+    display: inline-block;
+    width: 80px;
+    height: 50px;
+}
+
+.nav-link:hover {
+    background: gray;
+}
