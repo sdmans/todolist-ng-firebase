@@ -13,7 +13,7 @@ import {Router} from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   private currentUser: User;
-  private _isLoggedIn: boolean;
+  _isLoggedIn: boolean;
 
   constructor(private db: FirebaseDatabaseService, private authService: AuthService, private af: AngularFireAuth, private router: Router) { 
     // this.currentUser = this.authService.getCurrentUser()

@@ -9,8 +9,8 @@ import * as firebase from 'firebase/app';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-private currentUserName;
-private _isLoggedIn: boolean;
+currentUserName;
+_isLoggedIn: boolean;
 
   constructor(private authService: AuthService, private af: AngularFireAuth) { 
     // this.currentUser = this.authService.getCurrentUser();
@@ -44,7 +44,8 @@ private _isLoggedIn: boolean;
 
   }
 
-  signOut() {
+  signOut(event) {
+    event.preventDefault();
     console.log("Signing out!");
     this.authService.signOut();
     console.log('You have signed out successfully!');
