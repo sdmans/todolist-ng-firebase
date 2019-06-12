@@ -1,0 +1,10 @@
+<section>
+  <h2>Sign into your account</h2>
+  <form *ngIf="!_isLoggedIn" #signForm class="sign-in-form" (submit)="signIn(username, pw)">
+  <label for="email">Email Address</label>
+  <input #username type="text" name="email">
+  <label for="password">Password</label>
+  <input #pw type="text" name="password">
+  <button class="btn btn-primary">Sign in!</button>
+  </form>
+</section>

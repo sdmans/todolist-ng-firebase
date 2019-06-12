@@ -5,6 +5,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { Observable } from 'rxjs';
 import * as firebase from 'firebase/app';
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 
 
@@ -26,7 +27,7 @@ export class AuthService {
 
   private activeUser;
 
-  constructor(public af: AngularFireDatabase, private afAuth: AngularFireAuth) { 
+  constructor(public af: AngularFireDatabase, private afAuth: AngularFireAuth, private router: Router) { 
 
   }
 
@@ -69,6 +70,7 @@ export class AuthService {
     if (firebase.auth().currentUser) {
       console.log('already signed in as: ', firebase.auth().currentUser);
       console.log(firebase.auth().currentUser.email);
+      this.router.navigateByUrl('/signin');
       // [START signout]
       // console.log('Signing out!')
       // firebase.auth().signOut();

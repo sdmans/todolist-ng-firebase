@@ -25,6 +25,7 @@ import { CommentFormComponent } from './comment-form/comment-form.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RegisterComponent } from './register/register.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { TodoListComponent } from './todo-list/todo-list.component';
     NavbarComponent,
     RegisterComponent,
     TodoListComponent,
+    SignInComponent,
   ],
   imports: [
     BrowserModule,

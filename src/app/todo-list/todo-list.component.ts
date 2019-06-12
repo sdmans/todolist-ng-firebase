@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 
-export interface Comment { comment: string; userId: string, name: string };
+export interface Comment { comment: string; userId: string, name: string};
 export interface CommentId extends Comment { id: string; };
 // export interface CommentUser extends Comment { userId: string };
 

@@ -13,7 +13,7 @@
         <a *ngIf="!_isLoggedIn" class="nav-link" routerLink="/register">Register</a>
       </li>
       <li class="nav-item">
-        <a *ngIf="!_isLoggedIn" class="nav-link" routerLink="/register">Sign In</a>
+        <a *ngIf="!_isLoggedIn" class="nav-link" routerLink="/signin">Sign In</a>
         <a *ngIf="_isLoggedIn" class="nav-link" href="#" (click)="signOut($event)">Sign Out</a> 
       </li>
     </ul>
