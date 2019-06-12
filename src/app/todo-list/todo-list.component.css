@@ -1,0 +1,31 @@
+h2 {
+    margin-top: 20px;
+}
+
+div.form-group {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+input {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.comment-paragraph {
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+.btn-danger {
+    margin-bottom: 10px;
+    height: 100%;
+    width: 70px;
+    padding: 1px
+}
