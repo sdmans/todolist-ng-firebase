@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -8,7 +9,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class SignInComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -19,6 +20,7 @@ export class SignInComponent implements OnInit {
     const accessPw = pw.value;
     // console.log(username, accessPw);
     this.authService.signIn(username, accessPw);
+    this.router.navigateByUrl('/todolist');
   }
 
 }

@@ -70,7 +70,6 @@ export class AuthService {
     if (firebase.auth().currentUser) {
       console.log('already signed in as: ', firebase.auth().currentUser);
       console.log(firebase.auth().currentUser.email);
-      this.router.navigateByUrl('/signin');
       // [START signout]
       // console.log('Signing out!')
       // firebase.auth().signOut();
