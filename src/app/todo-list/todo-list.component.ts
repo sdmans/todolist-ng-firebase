@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 
 
 export interface Comment { comment: string; userId: string, name: string};
-export interface CommentId extends Comment { id: string; };
+export interface CommentId extends Comment { id?: string; };
 // export interface CommentUser extends Comment { userId: string };
 
 @Component({
@@ -18,16 +18,18 @@ export interface CommentId extends Comment { id: string; };
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
-  private commentsCollection: AngularFirestoreCollection<Comment>;
-  comments: Observable<Comment[]>;
-  commentIds: Observable<Comment[]>;
+  private commentsCollection: AngularFirestoreCollection<CommentId>;
+  private commentsWithIds; //Contains the comments collection with IDs
+  comments: Observable<CommentId[]>;
   currentUser: User;
   public _isLoggedIn: boolean;
 
   constructor(private afs: AngularFirestore, private db: DatabaseService, private authService: AuthService, private af: AngularFireAuth) { 
     /* Saved by the documentation! https://github.com/angular/angularfire2/blob/master/docs/firestore/collections.md */
-    this.commentsCollection = afs.collection<Comment>('comments');
-    this.comments = this.commentsCollection.valueChanges();
+
+
+    this.commentsCollection = this.afs.collection<Comment>('comments');
+    // this.comments = this.commentsCollection.valueChanges();
 
        /* Will figure this out after I get users to add their ids to comments they make */
     /* Step 1: Check if users are logged in or not and retrieve data from that user */
@@ -52,14 +54,15 @@ export class TodoListComponent implements OnInit {
     // this.commentsCollection = afs.collection<Comment>('comments')
     // this.commentsCollection.orderBy("name").limit(3);
     
-    this.comments = this.commentsCollection.snapshotChanges().pipe(
+    this.commentsWithIds = this.afs.collection<Comment>('comments').snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as Comment;
         const id = a.payload.doc.id;
-        // console.log({ id, ...data })
         return { id, ...data };
       }))
     );
+
+    this.comments = this.commentsWithIds;
 
   }
 

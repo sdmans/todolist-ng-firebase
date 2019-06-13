@@ -9,7 +9,7 @@ export interface Comment { comment: string, name: string, userId: string, id: st
   providedIn: 'root'
 })
 export class DatabaseService {
-  private commentsCollection: AngularFirestoreCollection<Comment>;
+  private commentsCollection: AngularFirestoreCollection<any>;
 
 
   constructor(private afs: AngularFirestore) { }
