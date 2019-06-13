@@ -2,6 +2,10 @@ h2 {
     margin-top: 20px;
 }
 
+p {
+    margin: 5px;
+}
+
 div.form-group {
     display: flex;
     justify-content: center;
@@ -24,8 +28,28 @@ input {
 }
 
 .btn-danger {
-    margin-bottom: 10px;
-    height: 100%;
+    margin: 0px;
+    height: 20px;
     width: 70px;
-    padding: 1px
+    padding: 1px;
+    margin-bottom: 10px;
+}
+.btn-danger:hover {
+    margin: 0px;
+}
+
+.item {
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    max-width: 600px;
+    
+}
+
+hr.item-divider {
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

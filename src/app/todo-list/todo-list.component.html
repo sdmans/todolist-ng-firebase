@@ -17,10 +17,11 @@
   
     <h2>{{currentUser.name}}'s To Do List</h2>
     <div *ngFor="let comment of comments | async">
-      <div *ngIf="comment.userId === currentUser.id">
+      <div class="item" *ngIf="comment.userId === currentUser.id">
         <p class="comment-paragraph">{{comment.comment}}</p>
-        <p>Posted by: {{comment.name}}</p>
+        <p>Posted by: {{comment.name}} on {{comment.date}}</p>
         <button class="btn btn-danger" (click)="delete(comment.id)">Delete</button>
+        
       </div>
     </div>
   </div>

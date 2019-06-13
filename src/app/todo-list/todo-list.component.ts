@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 
-export interface Comment { comment: string; userId: string, name: string};
+export interface Comment { comment: string; userId: string, name: string, date?: {}};
 export interface CommentId extends Comment { id?: string; };
 // export interface CommentUser extends Comment { userId: string };
 
@@ -73,7 +73,27 @@ export class TodoListComponent implements OnInit {
     /* This is just to take the place of the user name which might have to be set up after the account is created */
     let userName = this.currentUser.email.substring(0,5);
     console.log(userName);
-    let comment: Comment = {comment: e.target.value, userId: this.currentUser.id, name: userName}; 
+    /* Get date the item was created */
+    /* Solution https://stackoverflow.com/questions/12409299/how-to-get-current-formatted-date-dd-mm-yyyy-in-javascript-and-append-it-to-an-i*/
+
+    const today = new Date();
+    let dd = today.getDate();
+    let mm = today.getMonth() + 1;
+    let yyyy = today.getFullYear();
+    let hour = today.getUTCHours();
+    let minutes = today.getUTCMinutes();
+
+    if (dd < 10) {
+      dd = 0 + dd;
+    } 
+
+    if (mm < 10) {
+      mm = 0 + mm;
+    } 
+
+    let currentDate = `${mm}/${dd}/${yyyy} at ${hour}:${minutes}`;//stores it in month/day/year format
+
+    let comment: Comment = { comment: e.target.value, userId: this.currentUser.id, name: userName, date: currentDate}; 
     this.commentsCollection.add(comment);
     // this.comments.subscribe(data => console.log(data));
     e.target.value = "";
