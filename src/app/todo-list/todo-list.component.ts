@@ -19,7 +19,6 @@ export interface CommentId extends Comment { id?: string };
 })
 export class TodoListComponent implements OnInit {
   private commentsCollection: AngularFirestoreCollection<CommentId>;
-  private commentsWithIds; //Contains the comments collection with IDs
   comments: Observable<CommentId[]>;
   currentUser: User;
   public _isLoggedIn: boolean;
@@ -54,7 +53,7 @@ export class TodoListComponent implements OnInit {
     // this.commentsCollection = afs.collection<Comment>('comments')
     // this.commentsCollection.orderBy("name").limit(3);
     
-    this.commentsWithIds = this.afs.collection<Comment>('comments').snapshotChanges().pipe(
+    this.comments = this.afs.collection<Comment>('comments').snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as Comment;
         const id = a.payload.doc.id;
@@ -65,9 +64,8 @@ export class TodoListComponent implements OnInit {
     
     /* Create a way to add edit boolean for comment items */
     
-    this.comments = this.commentsWithIds
     
-    this.comments.subscribe(data => console.log(data));
+    // this.comments.subscribe(data => console.log(data));
   }
 
   ngOnInit() {
@@ -86,6 +84,7 @@ export class TodoListComponent implements OnInit {
     let yyyy = today.getFullYear();
     let hour = today.getUTCHours();
     let minutes = today.getUTCMinutes().toString();
+    let timeOfDay;
 
     if (dd < 10) {
       dd = 0 + dd;
@@ -99,7 +98,13 @@ export class TodoListComponent implements OnInit {
       minutes = "0" + minutes;
     }
 
-    let currentDate = `${mm}/${dd}/${yyyy} at ${hour}:${minutes}`;//stores it in month/day/year format
+    if (hour > 12) {
+      timeOfDay = "AM";
+    } else {
+      timeOfDay = "PM";
+    }
+
+    let currentDate = `${mm}/${dd}/${yyyy} at ${hour}:${minutes} ${timeOfDay}`;//stores it in month/day/year format
 
     let comment: Comment = { comment: e.target.value, userId: this.currentUser.id, name: userName, date: currentDate}; 
     this.commentsCollection.add(comment);
