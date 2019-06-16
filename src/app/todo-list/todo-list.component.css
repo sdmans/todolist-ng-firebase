@@ -33,10 +33,14 @@ input {
     width: 70px;
     padding: 1px;
     margin-bottom: 10px;
+    margin-left: 10px;
 }
 
-.btn-danger:hover {
-    margin: 0px;
+.edit {
+    height: 20px;
+    width: 70px; 
+    padding: 1px;
+    margin-right: 10px;
 }
 
 .item {
@@ -48,9 +52,22 @@ input {
     
 }
 
+.todo-edit-input {
+    margin-top: 10px;
+}
+
+label {
+  display: block;  
+}
+
 hr.item-divider {
     width: 200px;
     margin: 0 auto;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center
 }

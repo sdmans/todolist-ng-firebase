@@ -98,13 +98,13 @@ export class TodoListComponent implements OnInit {
       minutes = "0" + minutes;
     }
 
-    if (hour > 12) {
+    if (hour < 12) {
       timeOfDay = "AM";
     } else {
       timeOfDay = "PM";
     }
 
-    let currentDate = `${mm}/${dd}/${yyyy} at ${hour}:${minutes} ${timeOfDay}`;//stores it in month/day/year format
+    let currentDate = `${mm}/${dd}/${yyyy} at ${hour}:${minutes} ${timeOfDay} UTC`;//stores it in month/day/year format
 
     let comment: Comment = { comment: e.target.value, userId: this.currentUser.id, name: userName, date: currentDate}; 
     this.commentsCollection.add(comment);
@@ -116,6 +116,10 @@ export class TodoListComponent implements OnInit {
   delete(id) {
     console.log(`Deleting item with id: ${id}`);
     this.afs.collection(`comments`).doc(`${id}`).delete();
+  }
+
+  toggleEditView(comment) {
+    comment.edit = !comment.edit;
   }
 
 }

@@ -19,11 +19,20 @@
     <!-- Add an ngIf for edit mode -->
     <div *ngFor="let comment of comments | async">
       <div class="item" *ngIf="comment.userId === currentUser.id">
-        <p class="comment-paragraph">{{comment.comment}}</p>
-        <p>Posted by: {{comment.name}} on {{comment.date}}</p>
-        <!-- <button class="btn-primary">Edit</button> -->
-        <button class="btn btn-danger" (click)="delete(comment.id)">Delete</button>
-        
+          <div *ngIf="!comment.edit" class="comment-container">
+            <p class="comment-paragraph">{{comment.comment}}</p>
+            <p>Posted by: {{comment.name}} on {{comment.date}}</p>
+            <div class="button-container">  
+              <button class="btn btn-primary edit" (click)="toggleEditView(comment)">Edit</button>
+              <button class="btn btn-danger" (click)="delete(comment.id)">Delete</button>
+          </div>
+        </div>
+        <!-- Markup below displayed when you toggle edit view -->
+        <div *ngIf="comment.edit">
+            <label for="To Do Item">Edit To Do</label>
+            <input class="todo-edit-input" type="text">
+            <button class="btn save" (click)="toggleEditView(comment)">Save</button>
+          </div>  
       </div>
     </div>
   </div>
