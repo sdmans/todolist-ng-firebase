@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 
-export interface Comment { comment: string; userId: string, name: string, date?: {}};
-export interface CommentId extends Comment { id?: string; };
+export interface Comment { comment: string; userId: string, name: string, date?: {}, edit?: boolean};
+export interface CommentId extends Comment { id?: string };
 // export interface CommentUser extends Comment { userId: string };
 
 @Component({
@@ -58,12 +58,16 @@ export class TodoListComponent implements OnInit {
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as Comment;
         const id = a.payload.doc.id;
-        return { id, ...data };
+        const edit = false;//Used to create a status for whether the item is being edited that isn't stored on the database.
+        return { id, edit, ...data };
       }))
     );
-
-    this.comments = this.commentsWithIds;
-
+    
+    /* Create a way to add edit boolean for comment items */
+    
+    this.comments = this.commentsWithIds
+    
+    this.comments.subscribe(data => console.log(data));
   }
 
   ngOnInit() {
@@ -81,7 +85,7 @@ export class TodoListComponent implements OnInit {
     let mm = today.getMonth() + 1;
     let yyyy = today.getFullYear();
     let hour = today.getUTCHours();
-    let minutes = today.getUTCMinutes();
+    let minutes = today.getUTCMinutes().toString();
 
     if (dd < 10) {
       dd = 0 + dd;
@@ -90,6 +94,10 @@ export class TodoListComponent implements OnInit {
     if (mm < 10) {
       mm = 0 + mm;
     } 
+    
+    if (today.getUTCMinutes() < 10) {
+      minutes = "0" + minutes;
+    }
 
     let currentDate = `${mm}/${dd}/${yyyy} at ${hour}:${minutes}`;//stores it in month/day/year format
 
