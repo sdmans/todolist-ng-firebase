@@ -122,10 +122,11 @@ export class TodoListComponent implements OnInit {
     comment.edit = !comment.edit;
   }
 
-  saveItemChanges(comment) {
+  saveItemChanges(comment, input) {
     comment.edit = !comment.edit;
     console.log('..saving changes');
-    this.db.getComment(comment);
+    const updatedText = input.value;
+    this.db.updateComment(comment.id, updatedText);
   }
 
 }

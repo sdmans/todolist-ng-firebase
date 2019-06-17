@@ -29,10 +29,13 @@
         </div>
         <!-- Markup below displayed when you toggle edit view -->
         <div *ngIf="comment.edit">
-            <label for="To Do Item">Edit To Do</label>
-            <input class="todo-edit-input" type="text">
-            <button class="btn save" (click)="saveItemChanges(comment)">Save</button>
-            <button class="btn save" (click)="toggleEditView(comment)">Cancel</button>
+              <label for="To Do Item">Edit To Do</label>
+              <p><b>Current:</b> {{comment.comment}}</p>
+              <input #todoText class="todo-edit-input" type="text" value="{{comment.comment}}" (keydown.enter)="saveItemChanges(comment, todoText)">
+              <!-- <textarea name="input" cols="50" rows="10" value="{{comment.comment}}"></textarea> -->
+              <button type="submit" class="btn save" (click)="saveItemChanges(comment, todoText)">Save</button>
+              <button class="btn save" (click)="toggleEditView(comment)">Cancel</button>
+
           </div>  
       </div>
     </div>

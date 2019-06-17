@@ -52,6 +52,11 @@ input {
     
 }
 
+textarea {
+    display: block;
+    margin: 0 auto;
+}
+
 .todo-edit-input {
     margin-top: 10px;
 }

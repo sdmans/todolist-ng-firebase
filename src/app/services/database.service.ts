@@ -32,7 +32,15 @@ export class DatabaseService {
     );
   }
 
-  getComment(comment) {
-    console.log(comment);
+  updateComment(id, inputText) {
+    // console.log(comment); 
+    this.afs.collection('comments').doc(`${id}`).update({
+      comment: `${inputText}`
+    })
+    .then(()=> {
+      console.log('Comment successfully updated!');
+    }).catch((error) => {
+      console.log('Error writing document: ', error);
+    })
   }
 }
