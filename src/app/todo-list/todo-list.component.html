@@ -31,7 +31,8 @@
         <div *ngIf="comment.edit">
             <label for="To Do Item">Edit To Do</label>
             <input class="todo-edit-input" type="text">
-            <button class="btn save" (click)="toggleEditView(comment)">Save</button>
+            <button class="btn save" (click)="saveItemChanges(comment)">Save</button>
+            <button class="btn save" (click)="toggleEditView(comment)">Cancel</button>
           </div>  
       </div>
     </div>

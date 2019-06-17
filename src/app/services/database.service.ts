@@ -31,4 +31,8 @@ export class DatabaseService {
       }))
     );
   }
+
+  getComment(comment) {
+    console.log(comment);
+  }
 }
