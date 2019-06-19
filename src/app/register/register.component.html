@@ -1,24 +1,35 @@
-
+<!-- 
 <section>
     <h2>Sign into your account</h2>
     <form *ngIf="!_isLoggedIn" #signForm class="sign-in-form" (submit)="signIn(signForm, username, pw)">
-    <label for="email">Email Address</label>
-    <input #username type="text" name="email">
-    <label for="password">Password</label>
-    <input #pw type="text" name="password">
-    <button>Sign in!</button>
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input #username type="text" class="form-control" name="email">
+            <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input #pw type="text" class="form-control" name="password">
+            <button class="btn btn-primary">Sign in!</button>
+        </div>
     </form>
-</section>
+</section> -->
 
 <section>
     <h2>Don't have an account? Create one here!</h2>
     <form class="register-form" #form (submit)="registerUser(email, password, $event)">
-    <p class="register-title">Account Registration Form</p>
-    <label for="email">Email Address</label>
-    <input #email type="text" name="email">
-    <label for="password">Password</label>
-    <input #password type="text" name="password">
-    <button>Submit</button>
+        <div class="form-group">
+            <p class="register-title">Account Registration Form</p>
+            <label for="email">Email Address</label>
+            <input #email type="text" class="form-control" name="email">
+            <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input #password type="text" class="form-control" name="password">
+        </div>
+            <button class="btn btn-primary">Create Account</button>
+        
     </form>
 </section>
 

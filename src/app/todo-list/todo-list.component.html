@@ -4,7 +4,8 @@
   <form class="control-group">
     <div class="form-group">
       <label for="comment">Add an Item</label>
-      <input name="comment" type="text" (change)="addComment($event)">
+      <input name="comment" type="text" class="form-control" (change)="addComment($event)">
+      <small class="form-text text-muted">Enter what you need to do and track it below!</small>
     </div>
     <button class="btn btn-primary">Add Item</button>
   </form>
@@ -46,7 +47,7 @@
         <div class="item" *ngIf="comment.userId === currentUser.id && comment.complete === true">
             <div *ngIf="!comment.edit" class="comment-container completed">
               <p class="comment-paragraph">{{comment.comment}}</p>
-              <p>Posted by: {{comment.name}} on {{comment.date}}</p>
+              <p class="comment-info">Posted by: {{comment.name}} on {{comment.date}}</p>
               <!-- <p>Complete: {{comment.complete}}</p> -->
               <hr>
               <div class="button-container complete-btns">

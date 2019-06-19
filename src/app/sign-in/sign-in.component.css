@@ -1,15 +1,40 @@
-form {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+section {
+    margin-top: 20px;
 }
 
-input {
-    width: 160px;
+form.sign-in-form {
+    max-width: 400px;
     margin: 0 auto;
+}
+
+form > p {
+    font-size: 24px;
+}
+  
+.form-group {
     margin-bottom: 20px;
 }
-button {
-    width: 140px;
-    margin: 0 auto;
+  
+label {
+    font-weight: bold;
 }
+
+small {
+    margin-bottom: 10px;
+}
+  
+button {
+    height: 40px;
+    width: auto;
+    font-size: 14px;
+}
+  
+@media (max-width: 992px) {
+    section {
+      padding: 10px;
+    }
+  
+    form {
+      padding: 40px;
+    }
+  }
