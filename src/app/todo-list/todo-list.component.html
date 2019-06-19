@@ -1,6 +1,6 @@
 <p *ngIf="!_isLoggedIn"><b>Sign in to view your To Do List!</b></p>
 
-<div *ngIf="_isLoggedIn">
+<div class="container-fluid" *ngIf="_isLoggedIn">
   <form class="control-group">
     <div class="form-group">
       <label for="comment">Add an Item</label>
@@ -18,7 +18,7 @@
       <div class="item" *ngIf="comment.userId === currentUser.id && comment.complete === false">
           <div *ngIf="!comment.edit" class="comment-container">
             <p class="comment-paragraph">{{comment.comment}}</p>
-            <p>Posted by: {{comment.name}} on {{comment.date}}</p>
+            <p class="comment-info">Posted by: {{comment.name}} on {{comment.date}}</p>
             <!-- <p>Complete: {{comment.complete}}</p> -->
             <hr>
             <div class="button-container">
@@ -50,9 +50,11 @@
               <!-- <p>Complete: {{comment.complete}}</p> -->
               <hr>
               <div class="button-container complete-btns">
-                <button class="btn btn-success undo-complete" (click)="toggleComplete(comment)">Undo</button> 
+                <button class="btn btn-info undo-complete" (click)="toggleComplete(comment)">Undo</button> 
                 <button class="btn btn-danger delete-complete" (click)="delete(comment.id)">Delete</button>
             </div>
           </div>
         </div>
+  </div>
+
   </div>

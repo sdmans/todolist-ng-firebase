@@ -1,3 +1,7 @@
+div.container-fluid {
+    margin-bottom: 60px;
+}
+
 h2 {
     margin-top: 20px;
 }
@@ -57,7 +61,8 @@ input {
     margin-bottom: 10px;
     border: 1px solid #E0E0E0;
     border-radius: 10px;
-    max-width: 600px;   
+    max-width: 600px;
+    padding: 16px;   
 }
 
 div.completed > p {
@@ -91,4 +96,48 @@ hr.item-divider {
     margin: 0 auto;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+/* Media Queries start here */
+
+/* Boostrap Media Query Details
+Small devices (tablets, 768px and up)
+
+Medium devices (desktops, 992px and up)
+Note: Hamburger menu appears below 992px
+
+Large devices (large desktops, 1200px and up)
+*/
+
+@media(max-width: 992px) {
+    .item {
+        padding: 10px;
+    }
+
+    p.comment-paragraph {
+        font-size:  18px;
+    }
+
+    p.comment-info {
+        font-size: 12px;
+    }
+
+    .btn {
+        height: 40px;
+        width: 80px; 
+        font-size: 14px;
+    }
+
+    .edit {
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+
+    .undo-complete {
+        margin-right: 20px;
+    }
+    
+    .delete-complete {
+        margin-left: 20px;
+    }
 }

@@ -16,7 +16,7 @@ _isLoggedIn: boolean;
     // this.currentUser = this.authService.getCurrentUser();
     this.af.authState.subscribe((data) => {
       if(data !== null) {
-        console.log(data);
+        // console.log(data);
         this.currentUserName = data.email;
         this._isLoggedIn = true;
       } else {
