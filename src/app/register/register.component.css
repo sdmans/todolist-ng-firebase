@@ -7,9 +7,26 @@
   margin-bottom: 20px;
 }
 
+label {
+  margin: 10px;
+  font-weight: bold;
+}
+
+form.sign-in-form > button {
+  margin-left: 10px;
+}
+
 .register-form > input {
   display: block;
   margin: 0 auto;
+}
+
+.register-form > button {
+  margin-top: 10px;
+}
+
+.register-title {
+  font-size: 18px;
 }
 
 section {
