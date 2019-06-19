@@ -18,9 +18,9 @@
       <div class="item" *ngIf="comment.userId === currentUser.id && comment.complete === false">
           <div *ngIf="!comment.edit" class="comment-container">
             <p class="comment-paragraph">{{comment.comment}}</p>
-            <hr>
             <p>Posted by: {{comment.name}} on {{comment.date}}</p>
-            <p>Complete: {{comment.complete}}</p>
+            <!-- <p>Complete: {{comment.complete}}</p> -->
+            <hr>
             <div class="button-container">
               <button class="btn btn-success" (click)="toggleComplete(comment)">Complete</button> 
               <button class="btn btn-primary edit" (click)="toggleEditView(comment)">Edit</button>
@@ -46,9 +46,9 @@
         <div class="item" *ngIf="comment.userId === currentUser.id && comment.complete === true">
             <div *ngIf="!comment.edit" class="comment-container completed">
               <p class="comment-paragraph">{{comment.comment}}</p>
-              <hr>
               <p>Posted by: {{comment.name}} on {{comment.date}}</p>
-              <p>Complete: {{comment.complete}}</p>
+              <!-- <p>Complete: {{comment.complete}}</p> -->
+              <hr>
               <div class="button-container complete-btns">
                 <button class="btn btn-success undo-complete" (click)="toggleComplete(comment)">Undo</button> 
                 <button class="btn btn-danger delete-complete" (click)="delete(comment.id)">Delete</button>
