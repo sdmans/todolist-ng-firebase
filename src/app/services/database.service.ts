@@ -41,6 +41,17 @@ export class DatabaseService {
       console.log('Comment successfully updated!');
     }).catch((error) => {
       console.log('Error writing document: ', error);
-    })
+    });
+  }
+
+  completeComment(comment) {
+    let completeFlag = !comment.complete
+    this.afs.collection('comments').doc(`${comment.id}`).update({
+      complete: completeFlag
+    }).then(()=> {
+      console.log('Comment successfully updated!');
+    }).catch((error) => {
+      console.log('Error writing document: ', error);
+    });
   }
 }

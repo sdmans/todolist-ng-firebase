@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 
-export interface Comment { comment: string; userId: string, name: string, date?: {}, edit?: boolean};
+export interface Comment { comment: string; userId: string, name: string, date?: {}, edit?: boolean, complete?: boolean };
 export interface CommentId extends Comment { id?: string };
 // export interface CommentUser extends Comment { userId: string };
 
@@ -106,7 +106,7 @@ export class TodoListComponent implements OnInit {
 
     let currentDate = `${mm}/${dd}/${yyyy} at ${hour}:${minutes} ${timeOfDay} UTC`;//stores it in month/day/year format
 
-    let comment: Comment = { comment: e.target.value, userId: this.currentUser.id, name: userName, date: currentDate}; 
+    let comment: Comment = { comment: e.target.value, userId: this.currentUser.id, name: userName, date: currentDate, complete: true }; 
     this.commentsCollection.add(comment);
     // this.comments.subscribe(data => console.log(data));
     e.target.value = "";
@@ -127,6 +127,11 @@ export class TodoListComponent implements OnInit {
     console.log('..saving changes');
     const updatedText = input.value;
     this.db.updateComment(comment.id, updatedText);
+  }
+
+  toggleComplete(comment: CommentId) {
+    // comment.complete = !comment.complete;
+    this.db.completeComment(comment);
   }
 
 }

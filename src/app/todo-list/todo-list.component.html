@@ -1,3 +1,5 @@
+<p *ngIf="!_isLoggedIn"><b>Sign in to view your To Do List!</b></p>
+
 <div *ngIf="_isLoggedIn">
   <form class="control-group">
     <div class="form-group">
@@ -18,11 +20,14 @@
     <h2>{{currentUser.name}}'s To Do List</h2>
     <!-- Add an ngIf for edit mode -->
     <div *ngFor="let comment of comments | async">
-      <div class="item" *ngIf="comment.userId === currentUser.id">
+      <div class="item" *ngIf="comment.userId === currentUser.id && comment.complete === false">
           <div *ngIf="!comment.edit" class="comment-container">
             <p class="comment-paragraph">{{comment.comment}}</p>
+            <hr>
             <p>Posted by: {{comment.name}} on {{comment.date}}</p>
-            <div class="button-container">  
+            <p>Complete: {{comment.complete}}</p>
+            <div class="button-container">
+              <button class="btn btn-success" (click)="toggleComplete(comment)">Complete</button> 
               <button class="btn btn-primary edit" (click)="toggleEditView(comment)">Edit</button>
               <button class="btn btn-danger" (click)="delete(comment.id)">Delete</button>
           </div>
@@ -38,6 +43,19 @@
 
           </div>  
       </div>
-    </div>
+    </div><!--ngFor ends here-->
+    <h2>Completed</h2>
+    <div *ngFor="let comment of comments | async">
+        <div class="item" *ngIf="comment.userId === currentUser.id && comment.complete === true">
+            <div *ngIf="!comment.edit" class="comment-container completed">
+              <p class="comment-paragraph">{{comment.comment}}</p>
+              <hr>
+              <p>Posted by: {{comment.name}} on {{comment.date}}</p>
+              <p>Complete: {{comment.complete}}</p>
+              <div class="button-container complete-btns">
+                <button class="btn btn-success undo-complete" (click)="toggleComplete(comment)">Undo</button> 
+                <button class="btn btn-danger delete-complete" (click)="delete(comment.id)">Delete</button>
+            </div>
+          </div>
+        </div>
   </div>
-  <p *ngIf="!_isLoggedIn"><b>Sign in to view your To Do List!</b></p>
