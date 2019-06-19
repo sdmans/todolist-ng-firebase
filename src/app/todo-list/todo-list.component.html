@@ -10,13 +10,8 @@
   </form>
 
   <hr>
-  <!-- Code commented out below will retreive all comments -->
-  <!-- <div *ngFor="let comment of comments | async">
-      <p>{{comment.comment}}<br>Posted by: {{comment.name}}</p>
-      <button (click)="delete(comment.id)">Delete</button>
-  </div> -->
-  
-  
+
+  <!-- Incomplete To Do Items display here -->
     <h2>{{currentUser.name}}'s To Do List</h2>
     <!-- Add an ngIf for edit mode -->
     <div *ngFor="let comment of comments | async">
@@ -44,6 +39,8 @@
           </div>  
       </div>
     </div><!--ngFor ends here-->
+
+    <!-- Completed items display here -->
     <h2>Completed</h2>
     <div *ngFor="let comment of comments | async">
         <div class="item" *ngIf="comment.userId === currentUser.id && comment.complete === true">

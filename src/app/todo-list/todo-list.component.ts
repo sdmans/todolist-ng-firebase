@@ -106,7 +106,7 @@ export class TodoListComponent implements OnInit {
 
     let currentDate = `${mm}/${dd}/${yyyy} at ${hour}:${minutes} ${timeOfDay} UTC`;//stores it in month/day/year format
 
-    let comment: Comment = { comment: e.target.value, userId: this.currentUser.id, name: userName, date: currentDate, complete: true }; 
+    let comment: Comment = { comment: e.target.value, userId: this.currentUser.id, name: userName, date: currentDate, complete: false }; 
     this.commentsCollection.add(comment);
     // this.comments.subscribe(data => console.log(data));
     e.target.value = "";
