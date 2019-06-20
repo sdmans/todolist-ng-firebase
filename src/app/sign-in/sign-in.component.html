@@ -1,6 +1,6 @@
 <section>
   <h2>Sign into your account</h2>
-  <form *ngIf="!_isLoggedIn" #signForm class="sign-in-form" (submit)="signIn(username, pw)">
+  <form #signForm class="sign-in-form" (submit)="signIn(username, pw)">
     <p>Sign in Form</p>
     <div class="form-group">
       <label for="email">Email Address</label>

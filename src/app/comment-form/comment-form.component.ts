@@ -23,7 +23,7 @@ export class CommentFormComponent implements OnInit {
   comments: Observable<Comment[]>;
   commentIds: Observable<Comment[]>;
   currentUser: User;
-  private _isLoggedIn: boolean;
+  _isLoggedIn: boolean;
 
   constructor(private afs: AngularFirestore, private db: DatabaseService, private authService: AuthService, private af: AngularFireAuth) { 
     /* Saved by the documentation! https://github.com/angular/angularfire2/blob/master/docs/firestore/collections.md */
