@@ -2,6 +2,8 @@
 ## Project Description:
 Create a To Do List that lets users list tasks they need to do!
 
+Here's a link to the [instructions](#instructions) in this document!
+
 ## Main Features
 1. Users should be able to add items to a list
 2. Users should be able to mark completed items on the list
@@ -33,7 +35,7 @@ I created this To Do List because it seemed like a great way to take my first di
 
  When I come back to this project, I'd like to improve the layout so users can always see completed items. I'm thinking two tabs that you can toggle between with a count for the number of tasks. An alternative to this would be two separate columns to hold ongoing and completed tasks. This may end up being done in a different Framework that I need to learn about!
 
- ##Instructions
+ ## Instructions
  1. Create an account or log into the application using the test account. \
  __Email:__ testuser@testmail.com\
  __Password:__ testpw
