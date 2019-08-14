@@ -33,6 +33,20 @@ I created this To Do List because it seemed like a great way to take my first di
 
  When I come back to this project, I'd like to improve the layout so users can always see completed items. I'm thinking two tabs that you can toggle between with a count for the number of tasks. An alternative to this would be two separate columns to hold ongoing and completed tasks. This may end up being done in a different Framework that I need to learn about!
 
+ ##Instructions
+ 1. Create an account or log into the application using the test account. \
+ __Email:__ testuser@testmail.com\
+ __Password:__ testpw
+ 2. Use the input field under "Add a To Do item" and click the "Add Item" button below. 
+
+ 3. The section below under your To Do List will populate with the new item.
+
+4. Test the different buttons below your to do items. Here's a description for each button! \
+__Complete__: Complete the item, removing it from the To Do List and adding it to the Completed List Section. \ 
+__Edit__: Toggle to the edit view which allows you to edit the Item as an input field. This will be populated with the current text be default. Press Save or Cancel to make changes and toggle back to the original view for the item. \
+__Delete__: Remove the item from your To Do List completely. \
+__Undo__: Only available for completed items. Will add the item back to the To Do List.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
 
 ## Development server
