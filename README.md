@@ -45,13 +45,17 @@ I created this To Do List because it seemed like a great way to take my first di
 
 4. Test the different buttons below each of your to do items. Here's a description for each button!
 
-__Complete__: \ Complete the item, removing it from the To Do List and adding it to the Completed List Section.
+__Complete__: \ 
+Complete the item, removing it from the To Do List and adding it to the Completed List Section.
 
-__Edit__: \ Toggle to the edit view which allows you to edit the Item as an input field. This will be populated with the current text be default. Press Save or Cancel to make changes and toggle back to the original view for the item.
+__Edit__: \ 
+Toggle to the edit view which allows you to edit the Item as an input field. This will be populated with the current text be default. Press Save or Cancel to make changes and toggle back to the original view for the item.
 
-__Delete__: \ Remove the item from your To Do List completely.
+__Delete__: \ 
+Remove the item from your To Do List completely.
 
-__Undo__: \ Only available for completed items. Will add the item back to the To Do List.
+__Undo__: \ 
+Only available for completed items. Will add the item back to the To Do List.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
 
