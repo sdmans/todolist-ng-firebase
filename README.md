@@ -41,13 +41,17 @@ I created this To Do List because it seemed like a great way to take my first di
  __Password:__ testpw
  2. Use the input field under "Add a To Do item" and click the "Add Item" button below. 
 
- 3. The section below under your To Do List will populate with the new item.
+ 3. The section, under [email address]'s To Do List will populate with the new item.
 
-4. Test the different buttons below your to do items. Here's a description for each button! \
-__Complete__: Complete the item, removing it from the To Do List and adding it to the Completed List Section. \ 
-__Edit__: Toggle to the edit view which allows you to edit the Item as an input field. This will be populated with the current text be default. Press Save or Cancel to make changes and toggle back to the original view for the item. \
-__Delete__: Remove the item from your To Do List completely. \
-__Undo__: Only available for completed items. Will add the item back to the To Do List.
+4. Test the different buttons below each of your to do items. Here's a description for each button!
+
+__Complete__: \ Complete the item, removing it from the To Do List and adding it to the Completed List Section.
+
+__Edit__: \ Toggle to the edit view which allows you to edit the Item as an input field. This will be populated with the current text be default. Press Save or Cancel to make changes and toggle back to the original view for the item.
+
+__Delete__: \ Remove the item from your To Do List completely.
+
+__Undo__: \ Only available for completed items. Will add the item back to the To Do List.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
 
